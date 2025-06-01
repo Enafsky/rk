@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: sudo apt update && sudo apt install -y cmake rpm dpkg-dev
       - name: Configure
-        run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=${{ github.workspace }}/install
       - name: Build
         run: cmake --build build --config Release
       - name: Run Tests
